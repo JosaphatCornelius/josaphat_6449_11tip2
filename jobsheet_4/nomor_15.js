@@ -1,0 +1,21 @@
+// ini tidak perlu diubah
+const readline = require("readline");
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+});
+//
+
+// Banu merupakan seorang murid di sekolah SMK di Jakarta dan jurusan dia adalah RPL (indeks 59)
+rl.question("Masukkan sebuah kalimat: ", (kalimat) => {
+    rl.question("Masukkan kata yang ingin Anda cari: ", (kataCari) => {
+        const indeksKata = kalimat.indexOf(kataCari);
+        if (indeksKata !== -1){
+            console.log(`Kata ${kataCari} ditemukan pada indeks ${indeksKata}`)
+        }
+        else {
+            console.log(`Kata ${kataCari} tidak ditemukan dalam kalimat.`)
+        }
+        rl.close();
+    });
+});
